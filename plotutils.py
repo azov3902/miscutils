@@ -37,3 +37,19 @@ def astroimshow(im,
 		colorbar()
 	plt.show()
 
+############################################################################################
+def azElPlot(az_rad, el_rad,
+	linespec='ro'):
+	""" Generates a polar plot of azimuth and elevation. """
+	el_deg = np.rad2deg(el_rad)
+	zenith_deg = 90 - el_deg
+	
+	newfigure(1,1)
+	ax = plt.subplot(111, projection='polar')
+	ax.plot(az_rad, zenith_deg, linespec)
+	ax.set_yticks(range(0, 90, 10))
+	ax.set_yticklabels(map(str, range(90, 0, -10)))
+
+	return ax
+
+
