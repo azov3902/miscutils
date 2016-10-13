@@ -39,17 +39,22 @@ def astroimshow(im,
 
 ############################################################################################
 def azElPlot(az_rad, el_rad,
-	linespec='ro'):
+	title='',
+	linespec='ro',
+	label='',
+	subplot=111):
 	""" Generates a polar plot of azimuth and elevation. """
 	el_deg = np.rad2deg(el_rad)
-	zenith_deg = 90 - el_deg
+	zenith_deg = -el_deg
 	
-	newfigure(1,1)
-	ax = plt.subplot(111, projection='polar')
-	ax.plot(az_rad, zenith_deg, linespec)
-	ax.set_yticks(range(0, 90, 10))
-	ax.set_yticklabels(map(str, range(90, 0, -10)))
-
+	# newfigure(1,1)
+	ax = plt.subplot(subplot, projection='polar')
+	ax.plot(az_rad, zenith_deg, linespec, label=label)
+	ax.plot(np.linspace(0, 2*np.pi, 360), np.zeros(360), 'k')
+	ax.set_yticks(range(-90, 90, 10))
+	ax.set_yticklabels(map(str, range(90, -90, -10)))
+	ax.set_title(title)
+	
 	return ax
 
 
