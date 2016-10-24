@@ -17,21 +17,23 @@ def newfigure(height=1,width=1):
 
 ############################################################################################
 def astroimshow(im, 
+	newwindow=False,
 	title=None,
 	plate_scale_as_px=1, 
-	subplot=None,
+	subplot=111,
 	colorbar_on=False):
 	""" Displays an input image given a plate scale. """
+	if newwindow:
+		newfigure()
 	h, w = im.shape
-	if plt.is_numlike(subplot):
-		plt.subplot(subplot)	
+	plt.subplot(subplot)	
 	if title:
 		plt.title(title)
 	if plate_scale_as_px != 1:
 		# plt.xlabel('arcsec')
 		# plt.ylabel('arcsec')
-		plt.gca().xaxis.set_major_formatter(FormatStrFormatter('%d\"'))
-		plt.gca().yaxis.set_major_formatter(FormatStrFormatter('%d\"'))
+		plt.gca().xaxis.set_major_formatter(FormatStrFormatter('%.2f\"'))
+		plt.gca().yaxis.set_major_formatter(FormatStrFormatter('%.2f\"'))
 	plt.imshow(im, extent = np.array([-w/2, w/2, -h/2, h/2]) * plate_scale_as_px)
 	if colorbar_on:
 		colorbar()

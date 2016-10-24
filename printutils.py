@@ -11,6 +11,12 @@ def pause():
 	return
 
 ############################################################################################
+def printHeader(str):
+	println()
+	print(str)
+	println()
+
+############################################################################################
 def hhmmss(t):
 	""" Return the hours, minutes and seconds corresponding to an input period specified in seconds. """
 	hh = (t - np.remainder(t, 3600)) / 3600

@@ -12,4 +12,5 @@ COLORBAR_PAD = 0.04
 
 from plotutils import *
 from printutils import *
+from fileutils import *
 
