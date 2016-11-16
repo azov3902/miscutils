@@ -7,7 +7,7 @@ def countFilesInDirectory(directory):
 	return sum(1 for item in os.listdir(directory) if isfile(join(directory, item)))
 
 ################################################################################
-def fileExists(file_path):
+def file_exists(file_path):
 	# Returns True if the file specified by file_path exists, False otherwise.
 	return isfile(file_path)
 
