@@ -12,10 +12,10 @@ def pause():
 
 ################################################################################
 def printHeader(str):
-	println()
+	print('-' * len(str))
 	print(str)
-	println()
-
+	print('-' * len(str))
+	
 ################################################################################
 def hhmmss(t):
 	""" Return the hours, minutes and seconds corresponding to an input period specified in seconds. """
