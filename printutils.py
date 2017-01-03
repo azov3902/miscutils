@@ -11,7 +11,7 @@ def pause():
 	return
 
 ################################################################################
-def printHeader(str):
+def print_header(str):
 	print('-' * len(str))
 	print(str)
 	print('-' * len(str))
