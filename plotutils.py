@@ -3,7 +3,14 @@ from miscutils import *
 from matplotlib.ticker import FormatStrFormatter
 from matplotlib.colors import LinearSegmentedColormap
 from matplotlib import ticker
+import os
 # import ipdb
+
+################################################################################
+def show_plot():
+	if not "SSH_CONNECTION" in os.environ:
+		plt.show()
+	return
 
 ################################################################################
 def colorbar(plot=None,nticks=5):
@@ -17,7 +24,7 @@ def colorbar(plot=None,nticks=5):
 	cb.locator = tick_locator
 	cb.ax.yaxis.set_major_locator(ticker.AutoLocator())
 	cb.update_ticks()
-	plt.show()
+	show_plot()
 
 ################################################################################
 def newfigure(height=1,width=1):
@@ -59,7 +66,7 @@ def astroimshow(im,
 		)
 	if colorbar_on:
 		colorbar(nticks=nticks)
-	plt.show()
+	show_plot()
 
 	return cmap, vmax, vmin
 
