@@ -3,7 +3,7 @@ from miscutils import *
 from matplotlib.ticker import FormatStrFormatter
 from matplotlib.colors import LinearSegmentedColormap
 from matplotlib import ticker
-import ipdb
+# import ipdb
 
 ################################################################################
 def colorbar(plot=None,nticks=5):
@@ -98,7 +98,7 @@ def scale_colorbar(im,
 	return cmap, vmax, vmin
 
 ################################################################################
-def azElPlot(az_rad, el_rad,
+def azel_plot(az_rad, el_rad,
 	title='',
 	linespec='ro',
 	label='',
