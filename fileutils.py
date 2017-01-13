@@ -6,16 +6,17 @@ import pdb
 def count_files_in_dir(directory):
 	# Counts the number of files (not including directories) in the given 
 	# directory.
-	return sum(1 for item in os.listdir(directory) if isfile(join(directory, item)))
+	return sum(1 for item in os.listdir(directory) if isfile(
+		join(directory, item)))
 
 ################################################################################
 def file_exists(file_path):
 	# Returns True if the file specified by file_path exists, False otherwise.
 	return isfile(file_path)
 
-############################################################################################
-def append_number_to_filename(path):
-	# Appends a number (e.g. '001' or '002' etc.) if there is an existing file in the given directory. 
+################################################################################
+	# Appends a number (e.g. '001' or '002' etc.) if there is an existing file 
+	# in the given directory. 
  	
  	try:
  		path.index('.')
@@ -26,7 +27,8 @@ def append_number_to_filename(path):
 	# Get the extension and the filename.
 	fname, ext = splitext(path)
 
-	# If the file doesn't exist and does not end in a number, then we append a number before returning the path.
+	# If the file doesn't exist and does not end in a number, then we append a 
+	# number before returning the path.
 	if not isfile(path):
 		if not fname[-1].isdigit():
 			fname = fname + '_001'
