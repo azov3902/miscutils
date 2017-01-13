@@ -52,22 +52,8 @@ def get_folders_in_dir(directory = '.'):
 	return next(os.walk(directory))[1]
 
 ################################################################################
-<<<<<<< HEAD
-=======
-def get_folders_in_dir(directory = '.'):
-	# Returns a list containing names of all the immediate subdirectories in the 
-	# given directory (the current directory by default)
-	return next(os.walk(directory))[1]
-
-################################################################################
->>>>>>> 89c4fe9dcab3de86f2b9ac17419e1f6d249ba975
 def create_dir(directory):
 	# Creates the directory if it does not already exist.
 	if not os.path.exists(directory):
 		os.makedirs(directory)
-<<<<<<< HEAD
 	return
-
-=======
-	return
->>>>>>> 89c4fe9dcab3de86f2b9ac17419e1f6d249ba975
