@@ -4,7 +4,7 @@ from matplotlib.ticker import FormatStrFormatter
 from matplotlib.colors import LinearSegmentedColormap
 from matplotlib import ticker
 import os
-# import ipdb
+import ipdb
 
 ################################################################################
 def show_plot():
